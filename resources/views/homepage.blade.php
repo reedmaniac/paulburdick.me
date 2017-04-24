@@ -189,7 +189,7 @@
             <div class="row">
                 <div class="col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-10 col-sm-8 about-content">
                     
-                   <p>Paul Burdick is a 37 year old programmer, adventurer, and all around geek who is unwilling
+                   <p>Paul Burdick is a 38 year old programmer, adventurer, and all around geek who is unwilling
 to call himself an enterpreneur because he refuses to put on airs. He frequently dabbles
 in startup life and has been the Chief Technology Officer for both <a href="http://ellislab.com">EllisLab</a> (creator of ExpressionEngine and CodeIgniter)
 and <a href="https://impactflow.com">ImpactFlow</a>. After his time at EllisLab, he joined up with the fine folks at 
