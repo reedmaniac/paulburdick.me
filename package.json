@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "bootstrap": "^3.3.5",
+    "bootstrap-sass": "^3.0.0",
+    "browserify": "^11.2.0",
+    "jquery": "^2.1.4",
+    "laravel-elixir": "^3.3.0"
+  }
+}
