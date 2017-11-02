@@ -18,7 +18,7 @@ class Controller extends BaseController
      *  @return View
      */
 
-    function homepage()
+    public function homepage()
     {
         return view('homepage', ['token' => csrf_token()]);
     }
@@ -29,8 +29,9 @@ class Controller extends BaseController
      *  @return View
      */
 
-    function now()
+    public function now()
     {
+        exit('yes');
         return view('now');
     }
 
@@ -40,7 +41,7 @@ class Controller extends BaseController
      *  @return View
      */
 
-    function blog()
+    public function blog()
     {
         return view('blog');
     }
@@ -51,7 +52,7 @@ class Controller extends BaseController
      *  @return bool
      */
 
-    function postContact(Request $request)
+    public function postContact(Request $request)
     {
         // Tempting to put some manner of throttling in here,
         // but the odds are low so unnecessary for now.
@@ -77,7 +78,7 @@ class Controller extends BaseController
 
         $this->sendContactEmail($params);
 
-        return \Response::json([], 200);        
+        return \Response::json([], 200);
     }
 
     /**
