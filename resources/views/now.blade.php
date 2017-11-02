@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title>Paul Burdick :: Now</title>
 
     <!-- Custom Fonts -->
@@ -17,10 +17,10 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
-    
+
     <meta name="description" content="Coder. Geek. Vagabond. Thru-Hiker. Lover of Knowledge. Pursuer of Fun.">
     <meta name="author" content="Paul Burdick">
-    
+
     <meta property="og:site_name" content="Paul Burdick" />
 	<meta property="og:description" content="Coder. Geek. Vagabond. Thru-Hiker. Lover of Knowledge. Pursuer of Fun." />
 
@@ -79,7 +79,7 @@
                     <li>
                         <a class="page-scroll" href="/blog">Blog</a>
                     </li>
-                    
+
                     <li>
                         <a href="https://theguide.io">The Guide</a>
                     </li>
@@ -105,7 +105,7 @@
         <!-- /.container-fluid -->
     </nav>
 
-    
+
     <!-- Now Section -->
     <section id="now" class="bg-light-gray">
         <div class="container">
@@ -117,8 +117,16 @@
             </div>
             <div class="row">
                 <div class="col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-10 col-sm-8 about-content">
-                    
-                    
+
+
+
+<p><em>November 2017.</em></p>
+
+<p>The summer was long and full of coding and running. Built <a href="https://github.com/artificery/kilvin">a new CMS</a> on top of Laravel and spent the rest of my time doing an ungodly amount of running to train for two ultramarathons.</p>
+
+<p>In September, I took a remote contract job with a company in Boulder, Colorado to help bolster my finances after an entire summer off from working and to save up money for adventures next year. The contract is supposed to go until February 2018 and then I am not entirely sure what will happen. More employment or a long term adventure seems the likely options.</p>
+
+    <hr>
 
 <p><em>April 2017.</em></p>
 
@@ -134,17 +142,17 @@
 
 <p><em>January 2017.</em></p>
 
-<p>Quickly approaching my six-month anniversary at <a href="https://www.vacasa.com">Vacasa</a> in Portland, Oregon. Thankfully, we 
+<p>Quickly approaching my six-month anniversary at <a href="https://www.vacasa.com">Vacasa</a> in Portland, Oregon. Thankfully, we
 got the business to agree that a massive shift needed to happen with the codebase and we are <em>slowly</em> building up new microservices
 to replace existing parts of the monolith codebase. It is a herculean task when you remember we have a large organization still requiring new
 features and upgrades to existing functionality.</p>
 
 <p>After a brief adjustment period to having a full-time job and less freedom to simply run off whenever I please, I was able to schedule quite a number
-of mini-adventures around the PNW. Completed a self-supported trail run around Mt. Hood via the <a href="https://theguide.io/articles/2016/circumnavigation-of-mt-hood-on-the-timberline-trail">40 mile Timberline Trail</a> and also have had multiple 
+of mini-adventures around the PNW. Completed a self-supported trail run around Mt. Hood via the <a href="https://theguide.io/articles/2016/circumnavigation-of-mt-hood-on-the-timberline-trail">40 mile Timberline Trail</a> and also have had multiple
 ski trips (thanks to newly purchased boots and backcountry skis!). This Spring I am once again becoming certified as a Wilderness First Responder and
 have scheduled a week of mountaineering training on Rainier to help expand my technical skills.</p>
 
-<p>As I find time, I will continue expanding <a href="https://theguide.io">The Guide</a> with the best trips I have completed. Finding the 
+<p>As I find time, I will continue expanding <a href="https://theguide.io">The Guide</a> with the best trips I have completed. Finding the
 right details and maps continue to be challenging, but I can only hope my efforts are useful to others.</p>
 
 	<hr>
@@ -155,7 +163,7 @@ right details and maps continue to be challenging, but I can only hope my effort
 existing codebase and database as much as I can. They have experienced incredible growth in the past two years and the system is in
 desperate need of upgrades and modern coding processes to handle any further growth in both clients and functionality.</p>
 
-<p>As I get settled into a new job, new house, and new relationship, I am putting outdoor travels a bit on hold for this month, so 
+<p>As I get settled into a new job, new house, and new relationship, I am putting outdoor travels a bit on hold for this month, so
 <a href="https://theguide.io">The Guide</a> will take a brief hiatus. As temperatures lower and the life molds itself into normal, I will once again start doing adventures and training trips that will make their way onto The Guide. Also looking forward to getting some Gear Guides on there as well as perhaps a few How-To articles.</p>
 
 	<hr>
@@ -168,7 +176,7 @@ car so that I could spend more time in the outdoors, ostensibly to add new artic
 outdoor trips in the Pacific Northwest and provide them with all the necessary information to
 complete the trip successfully.</p>
 
-<p>During my outdoor travels, I am also attempting to continue doing a bit of client/contract work to help pay the food, 
+<p>During my outdoor travels, I am also attempting to continue doing a bit of client/contract work to help pay the food,
 insurance, and gas bills. Finding this process a bit difficult, especially when a site develops a problem when
 I am in a remote location and the cell internet is not particularly fast. The learning process in this
 realm of remote digital work is ongoing.</p>
