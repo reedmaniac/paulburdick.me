@@ -31,7 +31,6 @@ class Controller extends BaseController
 
     public function now()
     {
-        exit('yes');
         return view('now');
     }
 
