@@ -144,10 +144,10 @@ h6 {
 }
 
 @keyframes sk-bouncedelay {
-  0%, 80%, 100% { 
+  0%, 80%, 100% {
     -webkit-transform: scale(0);
     transform: scale(0);
-  } 40% { 
+  } 40% {
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
   }
@@ -287,7 +287,8 @@ h6 {
 }
 
 header.page-header {
-    margin-top: 70px;
+    margin-top: 50px;
+    transition: margin .3s;
     text-align: center;
     color: #fff;
     background-attachment: scroll;
@@ -298,6 +299,12 @@ header.page-header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+@media (min-width: 768px) {
+    header.page-header {
+        margin-top: 70px;
+    }
 }
 
 header.page-header .intro-text {
@@ -598,7 +605,7 @@ section#blog_content
             line-height: 1.4em;
             color: #474747;
         }
-        
+
         blockquote
         {
             font-size: .9em;
@@ -627,7 +634,7 @@ section#blog_content
             font-size: 14px;
         }
 
-        /* responsiveness 
+        /* responsiveness
         --------------------------------------------- */
 
         @media screen and (min-width : 768px) and (max-width : 1024px)
@@ -768,13 +775,13 @@ section#blog_left_column
 
 
 .blog-pagination {
-    
+
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
     background-color: transparent;
     padding: 12px;
     margin: 0 -20px;
-    
+
     a {
         display: inline-block;
         font-weight: 700;
@@ -785,7 +792,7 @@ section#blog_left_column
 
         span
         {
-            margin: 0 5px;  
+            margin: 0 5px;
         }
     }
 }

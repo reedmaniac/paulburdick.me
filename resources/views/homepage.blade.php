@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title>Paul Burdick :: Home</title>
 
 
@@ -18,10 +18,10 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
-    
+
     <meta name="description" content="Coder. Geek. Vagabond. Thru-Hiker. Lover of Knowledge. Pursuer of Fun.">
     <meta name="author" content="Paul Burdick">
-    
+
     <meta property="og:site_name" content="Paul Burdick" />
 	<meta property="og:description" content="Coder. Geek. Vagabond. Thru-Hiker. Lover of Knowledge. Pursuer of Fun." />
 
@@ -75,7 +75,7 @@
                     <li>
                         <a href="https://reedmaniac.com">Blog</a>
                     </li>
-                    
+
                     <li>
                         <a href="https://theguide.io">The Guide</a>
                     </li>
@@ -111,7 +111,7 @@
             	<div class="row">
 					<div class="col-md-offset-5 col-sm-offset-4 col-xs-offset-4 col-md-2 col-sm-4 col-xs-4">
 						<div class="team-member">
-							<img src="img/paul-burdick-scruffy.jpeg" class="img-responsive img-circle" alt="Who's scruffy looking?">
+							<img src="img/paul-burdick-scruffy.jpg" class="img-responsive img-circle" alt="Who's scruffy looking?">
 						</div>
 					</div>
 				</div>
@@ -131,7 +131,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Endeavors Section -->
     <section id="passions" class="bg-light-gray">
         <div class="container">
@@ -148,7 +148,7 @@
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Code</h4>
-                    <p class="text-muted">Chief Technology Officer during the building of 
+                    <p class="text-muted">Chief Technology Officer during the building of
                     CodeIgniter and ExpressionEngine. Built a massive, scalable RESTful API for the
                     ImpactFlow SaaS. Talented at understanding in-depth
                     technical details while keeping an eye on the bigger picture.</p>
@@ -188,22 +188,22 @@
             </div>
             <div class="row">
                 <div class="col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-10 col-sm-8 about-content">
-                    
+
                    <p>Paul Burdick is a 38 year old programmer, adventurer, and all around geek who is unwilling
 to call himself an enterpreneur because he refuses to put on airs. He frequently dabbles
 in startup life and has been the Chief Technology Officer for both <a href="http://ellislab.com">EllisLab</a> (creator of ExpressionEngine and CodeIgniter)
-and <a href="https://impactflow.com">ImpactFlow</a>. After his time at EllisLab, he joined up with the fine folks at 
-<a href="http://solspace.com">Solspace</a> and explored the realm of client work by working with the likes of Nokia, Turner Broadcasting System (TBS), 
+and <a href="https://impactflow.com">ImpactFlow</a>. After his time at EllisLab, he joined up with the fine folks at
+<a href="http://solspace.com">Solspace</a> and explored the realm of client work by working with the likes of Nokia, Turner Broadcasting System (TBS),
 IDEO, and Broadcast Music, Inc (BMI). </p>
 
 <p>He has a degree in Philosophy from <a href="http://www.reed.edu">Reed College</a> and returned to school a decade later to attend <a href="https://www.pdx.edu">Portland State University</a> for Pre-Medicine.
-Since 2003, he has been a certified <a href="http://www.nols.edu/wmi/courses/wfr.shtml">Wilderness First Responder</a> and later was a licensed Wilderness EMT for four years in Oregon. 
+Since 2003, he has been a certified <a href="http://www.nols.edu/wmi/courses/wfr.shtml">Wilderness First Responder</a> and later was a licensed Wilderness EMT for four years in Oregon.
 He interned at the Portland State Outdoor Program and has used his wilderness medicine expertise and backcountry experience
 to guide trips around the Pacific Northwest for both schools and nonprofits.</p>
 
-<p>In 2013, after a long recovery from a knee injury, Paul completed a thru-hike of 
+<p>In 2013, after a long recovery from a knee injury, Paul completed a thru-hike of
 the <a href="http://www.pcta.org">Pacific Crest Trail</a> and discovered how truly magical modern
-marvels like internal plumbing really are. He is an intermediate mountaineer who has 
+marvels like internal plumbing really are. He is an intermediate mountaineer who has
 climbed multiple Cascade volcanoes as well as Mt. Whitney and Longs Peak. Other passions include
 trail running–the chillier and muddier the better–and long distance biking. Lately he has been considering a winter
 thru-hike of the Appalachian Trail.</p>
