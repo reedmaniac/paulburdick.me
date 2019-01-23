@@ -230,20 +230,24 @@ thru-hike of the Appalachian Trail.</p>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label class="sr-only" for="name">Your Name</label>
                                     <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
+                                    <label class="sr-only" for="email">Your Email</label>
                                     <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
+                                    <label class="sr-only" for="phone">Your Phone Number</label>
                                     <input type="tel" class="form-control" placeholder="Your Phone" id="phone">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label class="sr-only" for="message">Message</label>
                                     <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
