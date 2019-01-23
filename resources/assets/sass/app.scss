@@ -8,6 +8,22 @@
 }
 
 @font-face {
+  font-family: 'Montserrat';
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Kaushan Script';
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Droid Serif';
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
   font-display: block;
 }
 
@@ -49,7 +65,7 @@ a.active {
 }
 
 a {
-    color: #1e9bda;
+    color: #1E8CDA;
 }
 
 a:hover,
@@ -59,7 +75,7 @@ a:focus {
 
 a:active,
 a.active {
-    color: #2091DB;
+    color: #2081DB;
 }
 
 h1,
