@@ -7,6 +7,10 @@
   border-radius: $radius;
 }
 
+@font-face {
+  font-display: block;
+}
+
 
 /*!
  * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
@@ -20,7 +24,7 @@ body {
 }
 
 .text-muted {
-    color: #999;
+    color: #666;
 }
 
 .text-primary {
