@@ -268,7 +268,7 @@ thru-hike of the Appalachian Trail.</p>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Paul Burdick 2015-2019</span>
+                    <span class="copyright">Copyright &copy; Paul Burdick 2015-2020</span>
                 </div>
                 <div class="col-md-4">
                 </div>
@@ -279,8 +279,6 @@ thru-hike of the Appalachian Trail.</p>
                         <li><a href="https://github.com/reedmaniac" title="GitHub"><i class="fa fa-github"></i></a>
                         </li>
                         <li><a href="https://www.linkedin.com/in/paulburdick" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                        <li><a href="https://www.flickr.com/photos/133323973@N07/" title="Flickr"><i class="fa fa-flickr"></i></a>
                         </li>
                         <li><a href="https://instagram.com/reedmaniac" title="Instagram"><i class="fa fa-instagram"></i></a>
                         </li>
