@@ -31,10 +31,11 @@ class StravaSetup extends Migration
             $table->integer('strava_user_id')->unsigned(); // Ours
             $table->string('activity_name')->index();
             $table->string('activity_type')->index();
-            $table->integer('elevation_gain')->nullable();
-            $table->bigInteger('distance')->unsigned()->nullable();
-            $table->bigInteger('moving_time')->unsigned()->nullable();
-            $table->timestamp('started_at')->inde();
+            $table->integer('elevation_gain')->nullable(); // meters
+            $table->bigInteger('distance')->unsigned()->nullable(); // meters
+            $table->bigInteger('moving_time')->unsigned()->nullable();  // seconds
+            $table->bigInteger('elapsed_time')->unsigned()->nullable();  // seconds
+            $table->timestamp('started_at')->index();
             $table->timestamps();
 
             $table->foreign('strava_user_id')->references('id')->on('strava_users')->onDelete('cascade');

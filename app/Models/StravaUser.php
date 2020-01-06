@@ -15,6 +15,13 @@ class StravaUser extends Model
     protected $table = 'strava_users';
 
     /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['created_at', 'updated_at', 'activities_last_checked_at'];
+
+    /**
      * Get the user's access token model
      *
      * @param  string  $value

@@ -17,13 +17,14 @@ use League\OAuth2\Client\Token\AccessToken;
 
 use App\Models\StravaUser;
 use App\Models\StravaActivity;
+use App\Jobs\FetchAthleteActivities;
 
 class StravaController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     /**
-     *  Authorization Page
+     *  OAuth Provider
      *
      *  @return string
      */
@@ -117,6 +118,8 @@ class StravaController extends BaseController
         $user->access_token = $oauth_data;
         $user->save();
 
+        FetchAthleteActivities::dispatch($user->id);
+
         return $user->refresh();
     }
 
@@ -133,30 +136,30 @@ class StravaController extends BaseController
             return null;
         }
 
-        $athlete = StravaUser::where('strava_athlete_id', $strava_athlete_id)->first();
+        $strava_user = StravaUser::where('strava_athlete_id', $strava_athlete_id)->first();
 
-        if (empty($athlete)) {
+        if (empty($strava_user)) {
             return null;
         }
 
-        $access_token = $athlete->access_token;
+        $access_token = $strava_user->access_token;
 
         if (empty($access_token)) {
             return null;
         }
 
         if (!$access_token->hasExpired()) {
-            return $athlete;
+            return $strava_user;
         }
 
         $new_access_token = $this->buildStravaOAuth()->getAccessToken('refresh_token', [
             'refresh_token' => $access_token->getRefreshToken()
         ]);
 
-        $athlete->access_token = $new_access_token;
-        $athlete->save();
+        $strava_user->access_token = $new_access_token;
+        $strava_user->save();
 
-        return $athlete;
+        return $strava_user;
     }
 
     /**
@@ -194,31 +197,15 @@ class StravaController extends BaseController
             return redirect('strava/login');
         }
 
-        $token = $user->access_token->getToken();
+        $activities = StravaActivity::where('strava_user_id', $user->id)->orderBy('started_at')->get();
 
-        try {
-            $before = null;
-            $after = (new Carbon('2020-01-01 00:00'))->timestamp;
-            $page = 1;
-            $per_page = 200;
+        $vars['total_elevation'] = $activities->sum('elevation_gain');
 
-            $activities = $this->stravaClient($token)->getAthleteActivities($before, $after, $page, $per_page);
+        $vars['first_name'] = $user->first_name;
+        $vars['last_name'] = $user->last_name;
+        $vars['activities'] = $activities;
 
-            $activities = collect($activities)->transform(function ($item) {
-                return [
-                    'strava_id' => $item['id'],
-                    'strava_athlete_id' => $item['athlete']['id'],
-                    'activity_name' => $item['name'],
-                    'activity_type' => $item['type'],
-                    'elevation_gain' => $item['total_elevation_gain'],
-                    'distance' => $item['distance'],
-                    'moving_time' => $item['moving_time'],
-                    'activity_started_at' => new Carbon($item['start_date']),
-                ];
-            });
-            print_r($activities);
-        } catch(StravaException $e) {
-            print $e->getMessage();
-        }
+        return view('strava.activities', $vars);
+
     }
 }
