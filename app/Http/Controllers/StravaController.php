@@ -211,7 +211,6 @@ class StravaController extends BaseController
         $vars['activities'] = $activities;
 
         return view('strava.activities', $vars);
-
     }
 
     /**
@@ -337,6 +336,8 @@ class StravaController extends BaseController
         Cache::forever('strava:subscription_id', $subscription_id);
 
         \Log::debug("Subscription for Webhook Found and Saved Successfully: ".$subscription_id);
+
+        dd($response);
 
         return "Subscription for Webhook Found and Saved Successfully: ".$subscription_id;
     }
