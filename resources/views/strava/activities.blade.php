@@ -56,7 +56,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-left">
-                    <h2 class="section-heading">Your Strava Activities</h2>
+                    <h2 class="section-heading">2020 Strava Activities</h2>
                     <h3>Total Elevation Gain: {{ $total_elevation }}m / {{ number_format($total_elevation*3.28084) }} ft</h3>
                     <h3>Left Until 500K: {{ number_format(500000 - $total_elevation*3.28084) }}ft</h3>
 

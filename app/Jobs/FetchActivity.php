@@ -18,11 +18,12 @@ use League\OAuth2\Client\Token\AccessToken;
 use App\Models\StravaUser;
 use App\Models\StravaActivity;
 
-class FetchAthleteActivities implements ShouldQueue
+class FetchActivity implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $strava_user_id;
+    protected $strava_athlete_id;
+    protected $strava_activity_id;
 
     /**
      * Create a new job instance.
@@ -30,9 +31,10 @@ class FetchAthleteActivities implements ShouldQueue
      * @param integer $strava_user_id
      * @return void
      */
-    public function __construct($strava_user_id)
+    public function __construct($strava_athlete_id, $strava_activity_id)
     {
-        $this->strava_user_id = $strava_user_id;
+        $this->strava_athlete_id = $strava_athlete_id;
+        $this->strava_activity_id = $strava_activity_id;
     }
 
     /**
@@ -42,61 +44,39 @@ class FetchAthleteActivities implements ShouldQueue
      */
     public function handle()
     {
-        $user = $this->findStravaUser($this->strava_user_id);
+        \Log::debug(__CLASS__.' start');
+        $activity = $this->getActivity();
 
-        if (is_null($user->activities_last_checked_at)) {
-            $after = (new Carbon('2020-01-01 00:00'))->timestamp;
-        } else {
-            $after = (new Carbon($user->activities_last_checked_at))->subDays(7)->timestamp;
-        }
+        StravaActivity::updateOrCreate(
+            ['strava_user_id' => $activity['strava_user_id'], 'strava_activity_id' => $activity['strava_activity_id']],
+            $activity
+        );
 
-        $page = 1;
-        $max_pages = 10;
-
-        while (true) {
-            $activities = $this->getActivities(
-                $user->access_token->getToken(),
-                $after,
-                $page
-            );
-
-            foreach ($activities as $activity) {
-                StravaActivity::updateOrCreate(
-                    ['strava_user_id' => $activity['strava_user_id'], 'strava_activity_id' => $activity['strava_activity_id']],
-                    $activity
-                );
-            }
-
-            if ($activities->count() < 200 || $page > $max_pages) {
-                break;
-            }
-
-            $page++;
-        }
-
-        $user->activities_last_checked_at = now();
-        $user->save();
+        \Log::debug(__CLASS__.' end');
     }
 
     /**
-     * Get Activities
+     * Get Activity from API, Process via Collection, and Return just the one
      *
-     * @param string $token The Access Token for Strava, should be current
-     * @param integer Unix timestamp
-     * @param integer $page Which page to fetch
      * @return \Illuminate\Support\Collection
      */
-    public function getActivities($token, $after, $page)
+    public function getActivity()
     {
-        $before = null;
-        $per_page = 200;
+        $user = $this->findStravaUser();
 
-        // Returns array
-        $original_activities = $this->stravaClient($token)->getAthleteActivities($before, $after, $page, $per_page);
+        if (is_null($user)) {
+            throw new \Exception('No Strava User Found for Athlete ID '.$this->strava_athlete_id);
+        }
 
-        return collect($original_activities)->transform(function ($item) {
+        $token = $user->access_token->getToken();
+
+        $activity = $this->stravaClient($token)->getActivity($this->strava_activity_id, false);
+
+        \Log::debug('ACTIVITY!', $activity);
+
+        return collect([$activity])->transform(function ($item) use ($user) {
             return [
-                'strava_user_id' => $this->strava_user_id,
+                'strava_user_id' => $user->id,
                 'strava_activity_id' => $item['id'],
                 'activity_name' => $item['name'],
                 'activity_type' => $item['type'],
@@ -106,7 +86,19 @@ class FetchAthleteActivities implements ShouldQueue
                 'elapsed_time' => $item['elapsed_time'],
                 'started_at' => new Carbon($item['start_date']),
             ];
-        });
+        })->first();
+    }
+
+    /**
+     * Find Athlete from OAuth Data Token
+     *
+     *  @return string
+     */
+    private function stravaClient($token)
+    {
+        $adapter = new \GuzzleHttp\Client(['base_uri' => 'https://www.strava.com/api/v3/']);
+        $service = new StravaREST($token, $adapter);
+        return new StravaClient($service);
     }
 
     /**
@@ -114,9 +106,9 @@ class FetchAthleteActivities implements ShouldQueue
      *
      * @return null|\App\Models\StravaUser
      */
-    private function findStravaUser($strava_user_id)
+    private function findStravaUser()
     {
-        $strava_user = StravaUser::findOrFail($strava_user_id);
+        $strava_user = StravaUser::where('strava_athlete_id', $this->strava_athlete_id)->firstOrFail();
 
         $access_token = $strava_user->access_token;
 
@@ -151,17 +143,5 @@ class FetchAthleteActivities implements ShouldQueue
         );
 
         return new StravaOAuth($config);
-    }
-
-    /**
-     * Find Athlete from OAuth Data Token
-     *
-     *  @return string
-     */
-    private function stravaClient($token)
-    {
-        $adapter = new \GuzzleHttp\Client(['base_uri' => 'https://www.strava.com/api/v3/']);
-        $service = new StravaREST($token, $adapter);
-        return new StravaClient($service);
     }
 }
