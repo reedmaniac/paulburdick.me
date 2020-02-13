@@ -119,6 +119,18 @@
                 <div class="col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-10 col-sm-8 about-content">
 
 
+<p><em>February 2020.</em></p>
+
+<p>Years later, Paul checks back in.</p>
+
+<p>We now reside in Boulder, Colorado. After years of contract work, I started a job hunt last summer for a permanent position with a solid salary and excellent benefits.  Almost immediately, a recruiter contacted me about an opportunity at a company called <a href="https://www.automox.com/">Automox</a>. After a thorough interview process, I signed my acceptance letter and moved to Boulder in August. Tina joined me a few weeks later.</p>
+
+<p>New location means new places to play outdoors! At our current rental, there is a lovely view of the <a href="https://www.bouldercoloradousa.com/things-to-do/insider-guides/flatirons/">Flatirons</a> from our bedroom window. We have already hiked up and around them a half dozen times, despite Colorado being in the full grip of winter. Since we are now in the mountainous West, we have decided to make this year's challenge elevation focused. 500K of elevation gain in 2020! For those doing the math, that is an average of nearly 10K a week. Ooof. Plenty of motivation for us to explore all of the hiking and biking the area has to offer, including signing up for the <a href="https://triplebypass.org/">Double Trip Bypass Ride</a> in July. </p>
+
+<p>I still daydream about doing another thru-hike or <a href="https://reedmaniac.com/entries/mt-hood-picnic-part-deux">Picnic</a> though. 🤔🤔🤔</p>
+
+
+<hr>
 
 <p><em>November 2017.</em></p>
 
