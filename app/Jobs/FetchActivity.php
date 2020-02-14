@@ -47,6 +47,8 @@ class FetchActivity implements ShouldQueue
         \Log::debug(__CLASS__.' start');
         $activity = $this->getActivity();
 
+        \Log::debug('PROCESSED ACTIVITY!', $activity);
+
         StravaActivity::updateOrCreate(
             ['strava_user_id' => $activity['strava_user_id'], 'strava_activity_id' => $activity['strava_activity_id']],
             $activity
@@ -72,7 +74,7 @@ class FetchActivity implements ShouldQueue
 
         $activity = $this->stravaClient($token)->getActivity($this->strava_activity_id, false);
 
-        \Log::debug('ACTIVITY!', $activity);
+        \Log::debug('RETRIEVED ACTIVITY!', $activity);
 
         return collect([$activity])->transform(function ($item) use ($user) {
             return [
