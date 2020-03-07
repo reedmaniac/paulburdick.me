@@ -74,7 +74,7 @@ class FetchActivity implements ShouldQueue
 
         $activity = $this->stravaClient($token)->getActivity($this->strava_activity_id, false);
 
-        \Log::debug('RETRIEVED ACTIVITY!', $activity);
+        \Log::debug('RETRIEVED ACTIVITY!', (array) $activity);
 
         return collect([$activity])->transform(function ($item) use ($user) {
             return [
