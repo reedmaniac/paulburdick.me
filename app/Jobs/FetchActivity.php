@@ -99,7 +99,7 @@ class FetchActivity implements ShouldQueue
             \Log::debug('Failure to retrieve activity!', (array) $activity);
 
             if (stristr($activity, '429 Too Many Requests') !== false) {
-                Cache::add('strava:pause_until', now()->addMinutes(10), 10);
+                Cache::add('strava:pause_until', now()->addMinutes(16), 20);
             }
 
             throw new \Exception('Failure to Retreive Strava Activity: '.$this->strava_activity_id);
