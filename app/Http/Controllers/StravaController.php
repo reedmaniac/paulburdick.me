@@ -230,14 +230,29 @@ class StravaController extends BaseController
         // General debugging
         \Log::debug('Strava Webhook', $request->all());
 
+        // Throttling Delay, ugh
+        $delay = false;
+        if (Cache::has('strava:pause_until')) {
+            $delay = (new Carbon(Cache::get('strava:pause_until')))->addMinutes(1);
+        }
+
         if ($request->input('object_type') == 'activity') {
 
             if ($request->input('aspect_type') == 'create' || $request->input('aspect_type') == 'update') {
-                FetchActivity::dispatch($request->input('owner_id'), $request->input('object_id'));
+
+                if (!empty($delay)) {
+                    FetchActivity::dispatch($request->input('owner_id'), $request->input('object_id'))->delay($delay);
+                } else {
+                    FetchActivity::dispatch($request->input('owner_id'), $request->input('object_id'));
+                }
             }
 
             if ($request->input('aspect_type') == 'delete') {
-                DeleteActivity::dispatch($request->input('owner_id'), $request->input('object_id'));
+                if (!empty($delay)) {
+                    DeleteActivity::dispatch($request->input('owner_id'), $request->input('object_id'))->delay($delay);
+                } else {
+                    DeleteActivity::dispatch($request->input('owner_id'), $request->input('object_id'));
+                }
             }
 
             return response()->json([], 200);
