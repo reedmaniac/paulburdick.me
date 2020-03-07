@@ -8,6 +8,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Support\Facades\Cache;
 
 use Strava\API\OAuth as StravaOAuth;
 use Strava\API\Exception as StravaException;
@@ -21,6 +22,13 @@ use App\Models\StravaActivity;
 class FetchActivity implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+     /**
+     * The number of times the job may be attempted.
+     *
+     * @var int
+     */
+    public $tries = 3;
 
     protected $strava_athlete_id;
     protected $strava_activity_id;
@@ -45,6 +53,18 @@ class FetchActivity implements ShouldQueue
     public function handle()
     {
         \Log::debug(__CLASS__.' start');
+
+        if (Cache::has('strava:pause_until')) {
+            $pause_until = new Carbon(Cache::get('strava:pause_until'));
+
+            if ($pause_until->gt(now())) {
+                \Log::debug(__CLASS__.' Pause enabled, not processing.');
+                return;
+            } else {
+                Cache::forget('strava:pause_until');
+            }
+        }
+
         $activity = $this->getActivity();
 
         \Log::debug('PROCESSED ACTIVITY!', $activity);
@@ -77,6 +97,11 @@ class FetchActivity implements ShouldQueue
         // String indicates an error
         if (is_string($activity)) {
             \Log::debug('Failure to retrieve activity!', (array) $activity);
+
+            if (stristr($activity, '429 Too Many Requests') !== false) {
+                Cache::add('strava:pause_until', now()->addMinutes(10), 10);
+            }
+
             throw new \Exception('Failure to Retreive Strava Activity: '.$this->strava_activity_id);
         }
 
