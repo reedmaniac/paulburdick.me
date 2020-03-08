@@ -35,7 +35,7 @@ class StravaSetup extends Migration
             $table->decimal('distance', 12, 2)->nullable();  // meters
             $table->bigInteger('moving_time')->unsigned()->nullable();  // seconds
             $table->bigInteger('elapsed_time')->unsigned()->nullable();  // seconds
-            $table->timestamp('started_at')->index();
+            $table->datetime('started_at')->index();
             $table->timestamps();
 
             $table->foreign('strava_user_id')->references('id')->on('strava_users')->onDelete('cascade');

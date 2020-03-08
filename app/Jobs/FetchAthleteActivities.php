@@ -62,20 +62,13 @@ class FetchAthleteActivities implements ShouldQueue
                 $page
             );
 
-            // \Log::debug('FetchAthleteActivities: getActivities', (array) $activities);
+            \Log::debug('FetchAthleteActivities: getActivities', (array) $activities);
+
             foreach ($activities as $activity) {
-
-                $existingActivity = StravaActivity::where([
-                    'strava_user_id' => $activity['strava_user_id'],
-                    'strava_activity_id' => $activity['strava_activity_id']
-                ])->first();
-
-                if (empty($existingActivity)) {
-                    StravaActivity::create($activity);
-                } else {
-                    $existingActivity->fill($activity);
-                    $existingActivity->save();
-                }
+                StravaActivity::updateOrCreate(
+                    ['strava_user_id' => $activity['strava_user_id'], 'strava_activity_id' => $activity['strava_activity_id']],
+                    $activity
+                );
             }
 
             if ($activities->count() < 200 || $page > $max_pages) {
@@ -117,7 +110,7 @@ class FetchAthleteActivities implements ShouldQueue
                 'distance' => $item['distance'],
                 'moving_time' => $item['moving_time'],
                 'elapsed_time' => $item['elapsed_time'],
-                'started_at' => (new Carbon($item['start_date']))->toDateTimeString(),
+                'started_at' => $item['start_date'],
             ];
         });
     }
