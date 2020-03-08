@@ -64,6 +64,8 @@ class FetchAthleteActivities implements ShouldQueue
 
             // \Log::debug('FetchAthleteActivities: getActivities', (array) $activities);
 
+            \DB::connection()->enableQueryLog();
+
             foreach ($activities as $activity) {
 
                 \Log::debug('FetchAthleteActivities: activity loop', (array) $activity);
@@ -73,6 +75,10 @@ class FetchAthleteActivities implements ShouldQueue
                     $activity
                 );
             }
+
+            $queries = DB::getQueryLog();
+
+            \Log::debug('The Queries', $queries);
 
             if ($activities->count() < 200 || $page > $max_pages) {
                 break;
