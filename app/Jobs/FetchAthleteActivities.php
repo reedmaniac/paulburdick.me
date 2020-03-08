@@ -63,22 +63,20 @@ class FetchAthleteActivities implements ShouldQueue
             );
 
             // \Log::debug('FetchAthleteActivities: getActivities', (array) $activities);
-
-            \DB::connection()->enableQueryLog();
-
             foreach ($activities as $activity) {
 
-                \Log::debug('FetchAthleteActivities: activity loop', (array) $activity);
+                $existingActivity = StravaActivity::where([
+                    'strava_user_id' => $activity['strava_user_id'],
+                    'strava_activity_id' => $activity['strava_activity_id']
+                ])->first();
 
-                StravaActivity::updateOrCreate(
-                    ['strava_user_id' => $activity['strava_user_id'], 'strava_activity_id' => $activity['strava_activity_id']],
-                    $activity
-                );
+                if (empty($existingActivity)) {
+                    StravaActivity::create($activity);
+                } else {
+                    $existingActivity->fill($activity);
+                    $existingActivity->save();
+                }
             }
-
-            $queries = \DB::getQueryLog();
-
-            \Log::debug('The Queries', $queries);
 
             if ($activities->count() < 200 || $page > $max_pages) {
                 break;
