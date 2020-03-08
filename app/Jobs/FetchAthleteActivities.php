@@ -112,7 +112,7 @@ class FetchAthleteActivities implements ShouldQueue
                 'distance' => $item['distance'],
                 'moving_time' => $item['moving_time'],
                 'elapsed_time' => $item['elapsed_time'],
-                'started_at' => $item['start_date'],
+                'started_at' => new Carbon($item['start_date']),
             ];
         });
     }
