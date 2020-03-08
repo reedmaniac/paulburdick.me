@@ -51,7 +51,7 @@ class FetchAthleteActivities implements ShouldQueue
         }
 
         $page = 1;
-        $max_pages = 10;
+        $max_pages = 5;
 
         \Log::debug('FetchAthleteActivities for '.$user->username);
 
