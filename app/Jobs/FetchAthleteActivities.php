@@ -53,7 +53,7 @@ class FetchAthleteActivities implements ShouldQueue
         $page = 1;
         $max_pages = 10;
 
-        \Log::info('FetchAthleteActivities for '.$user->username);
+        \Log::debug('FetchAthleteActivities for '.$user->username);
 
         while (true) {
             $activities = $this->getActivities(
@@ -62,7 +62,7 @@ class FetchAthleteActivities implements ShouldQueue
                 $page
             );
 
-            \Log::info('FetchAthleteActivities: getActivities', $original_activities);
+            \Log::debug('FetchAthleteActivities: getActivities', $original_activities);
 
             foreach ($activities as $activity) {
                 StravaActivity::updateOrCreate(
@@ -98,7 +98,7 @@ class FetchAthleteActivities implements ShouldQueue
         // Returns array
         $original_activities = $this->stravaClient($token)->getAthleteActivities($before, $after, $page, $per_page);
 
-        \Log::info('FetchAthleteActivities: Original Activities ', $original_activities);
+        \Log::debug('FetchAthleteActivities: Original Activities ', $original_activities);
 
         return collect($original_activities)->transform(function ($item) {
             return [
