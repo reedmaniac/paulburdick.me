@@ -64,9 +64,12 @@ class FetchAthleteActivities implements ShouldQueue
 
             \DB::connection()->enableQueryLog();
 
-            \Log::debug('FetchAthleteActivities: getActivities', (array) $activities);
+            // \Log::debug('FetchAthleteActivities: getActivities', (array) $activities);
 
             foreach ($activities as $activity) {
+
+                \Log::debug('FetchAthleteActivities: activity loop', (array) $activity);
+
                 StravaActivity::updateOrCreate(
                     ['strava_user_id' => $activity['strava_user_id'], 'strava_activity_id' => $activity['strava_activity_id']],
                     $activity
