@@ -94,6 +94,8 @@ class FetchAthleteActivities implements ShouldQueue
         // Returns array
         $original_activities = $this->stravaClient($token)->getAthleteActivities($before, $after, $page, $per_page);
 
+        \Log::info('FetchAthleteActivities: ', $original_activities);
+
         return collect($original_activities)->transform(function ($item) {
             return [
                 'strava_user_id' => $this->strava_user_id,
