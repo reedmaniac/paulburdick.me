@@ -99,7 +99,7 @@ class StravaController extends BaseController
         if (empty($user)) {
             $user = $this->createStravaUser($strava_data, $oauth_data);
         } else {
-            \Log::debug("User exists {$strava_athlete_id}: Refreshing!");
+            \Log::debug("User exists {$user->username}: Refreshing!");
             FetchAthleteActivities::dispatch($user->id);
         }
 
