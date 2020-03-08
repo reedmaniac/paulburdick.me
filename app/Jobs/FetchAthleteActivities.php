@@ -76,7 +76,7 @@ class FetchAthleteActivities implements ShouldQueue
                 );
             }
 
-            $queries = DB::getQueryLog();
+            $queries = \DB::getQueryLog();
 
             \Log::debug('The Queries', $queries);
 
