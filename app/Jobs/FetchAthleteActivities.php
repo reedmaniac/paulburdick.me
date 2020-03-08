@@ -62,7 +62,7 @@ class FetchAthleteActivities implements ShouldQueue
                 $page
             );
 
-            \Log::debug('FetchAthleteActivities: getActivities', $activities);
+            \Log::debug('FetchAthleteActivities: getActivities', (array) $activities);
 
             foreach ($activities as $activity) {
                 StravaActivity::updateOrCreate(
