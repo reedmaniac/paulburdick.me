@@ -207,7 +207,10 @@ class StravaController extends BaseController
             return redirect('strava/login');
         }
 
-        $activities = StravaActivity::where('strava_user_id', $user->id)->orderBy('started_at')->get();
+        $activities = StravaActivity::where('strava_user_id', $user->id)
+            ->where('started_at', '>=', Carbon::create(2020, 1, 1, 0, 0, 0, 'America/Vancouver')->toDateTimeString())
+            ->orderBy('started_at')
+            ->get();
 
         $vars['total_elevation'] = $activities->sum('elevation_gain');
 
