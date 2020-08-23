@@ -194,7 +194,7 @@ to call himself an enterpreneur because he refuses to put on airs. He frequently
 in startup life and has been the Chief Technology Officer for both <a href="http://ellislab.com">EllisLab</a> (creator of ExpressionEngine and CodeIgniter)
 and <a href="https://impactflow.com">ImpactFlow</a>. After his time at EllisLab, he joined up with the fine folks at
 <a href="http://solspace.com">Solspace</a> and explored the realm of client work by working with the likes of Nokia, Turner Broadcasting System (TBS),
-IDEO, and Broadcast Music, Inc (BMI). He now resides in Boulder, Colorado as a Senior Engineer and Technical Lead with Automox, Inc.</p>
+IDEO, and Broadcast Music, Inc (BMI). He now resides in Boulder, Colorado as a Senior Engineer and Technical Lead with <a href="https://www.automox.com/">Automox, Inc.</a></p>
 
 <p>He has a degree in Philosophy from <a href="http://www.reed.edu">Reed College</a> and returned to school a decade later to attend <a href="https://www.pdx.edu">Portland State University</a> for Pre-Medicine.
 Since 2003, he has been a certified <a href="http://www.nols.edu/wmi/courses/wfr.shtml">Wilderness First Responder</a> and later was a licensed Wilderness EMT for four years in Oregon.
