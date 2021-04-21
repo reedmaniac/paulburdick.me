@@ -11,5 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
+// No longer used. Since the files do not change, I just built them once and moved on.
+
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');

@@ -16,7 +16,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
+    <link rel="stylesheet" href="/css/all.css">
 
     <meta name="description" content="Coder. Geek. Vagabond. Thru-Hiker. Lover of Knowledge. Pursuer of Fun.">
     <meta name="author" content="Paul Burdick">
@@ -69,15 +69,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
-                        <a href="/"></a>
-                    <li>
-                        <a class="page-scroll" href="/#about">About</a>
+                        <a href="/#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/#contact">Contact</a>
+                        <a class="page-scroll" href="mailto:paul@reedmaniac.com">Contact</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/blog">Blog</a>
+                        <a href="https://reedmaniac.com">Blog</a>
                     </li>
 
                     <li>
@@ -88,13 +86,16 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                              <li>
-                                <a href="https://www.flickr.com/photos/133323973@N07/">Photos</a>
+                                <a href="https://instagram.com/reedmaniac">Instagram</a>
+                            </li>
+                             <li>
+                                <a href="https://www.flickr.com/photos/133323973@N07/">Flickr</a>
                             </li>
                             <li>
                                 <a href="https://www.behance.net/reedmaniac">Portfolio</a>
                             </li>
                             <li>
-                                <a href="/now">Current Projects</a>
+                                <a href="/now">Current Work</a>
                             </li>
                         </ul>
                     </li>
@@ -224,19 +225,7 @@ realm of remote digital work is ongoing.</p>
         </div>
     </footer>
 
-
-    <script src="{{ elixir('js/app.js') }}"></script>
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-69209507-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>
+    <script src="/js/app.js"></script>
 
 </body>
 
