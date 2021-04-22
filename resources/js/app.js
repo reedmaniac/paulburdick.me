@@ -1,8 +1,15 @@
 
+
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+
+require('bootstrap');
+
+
 (function($) {
     "use strict"; // Start of use strict
-    
-    
+
+
 	$('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({

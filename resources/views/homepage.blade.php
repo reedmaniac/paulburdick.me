@@ -9,7 +9,6 @@
 
     <title>Paul Burdick :: Home</title>
 
-
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -17,7 +16,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
+    <link rel="stylesheet" href="/css/all.css">
 
     <meta name="description" content="Coder. Geek. Vagabond. Thru-Hiker. Lover of Knowledge. Pursuer of Fun.">
     <meta name="author" content="Paul Burdick">
@@ -71,6 +70,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="/#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="mailto:paul@reedmaniac.com">Contact</a>
                     </li>
                     <li>
                         <a href="https://reedmaniac.com">Blog</a>
@@ -213,62 +215,11 @@ thru-hike of the Appalachian Trail.</p>
         </div>
     </section>
 
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Me</h2>
-                    <h3 class="section-subheading text-muted">Always interested in a worthwhile coding project or an incredible adventure.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <input type="hidden" name="token" value="<?php echo $token; ?>">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="sr-only" for="name">Your Name</label>
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="email">Your Email</label>
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="phone">Your Phone Number</label>
-                                    <input type="tel" class="form-control" placeholder="Your Phone" id="phone">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="sr-only" for="message">Message</label>
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-paul js-submit-message">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Paul Burdick 2015-2020</span>
+                    <span class="copyright">Copyright &copy; Paul Burdick 2015-2021</span>
                 </div>
                 <div class="col-md-4">
                 </div>
@@ -288,19 +239,7 @@ thru-hike of the Appalachian Trail.</p>
         </div>
     </footer>
 
-
-    <script src="{{ elixir('js/app.js') }}"></script>
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-69209507-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>
+    <script src="/js/app.js"></script>
 
 </body>
 
