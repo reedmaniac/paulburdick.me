@@ -1,10 +1,4 @@
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
-// Font-Awesome
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/regular";
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "bootstrap";
 
 
 @mixin border-radius($radius: 0.5em) {
@@ -318,7 +312,7 @@ header.page-header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../../img/header-bg.jpg);
+    background-image: url(../img/header-bg.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -471,7 +465,7 @@ section h3.section-subheading {
 
 section#contact {
     background-color: #222;
-    background-image: url(../../img/map-image.png);
+    background-image: url(../img/map-image.png);
     background-position: center;
     background-repeat: no-repeat;
 }
